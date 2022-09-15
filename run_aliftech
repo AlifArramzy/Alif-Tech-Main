@@ -1,0 +1,1 @@
+./odoo-bin --addons-path=/home/alif/HashMicro/minimarket/addons,/home/alif/HashMicro/minimarket/addonstech --xmlrpc-port=8080 --db_port 5432 -d aliftech --limit-memory-hard 0 --limit-time-real=10000 -u aliftech
