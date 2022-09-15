@@ -1,0 +1,32 @@
+<odoo>
+
+    <record id="report_supplier_xlsx" model="ir.actions.report">
+        <field name="name">Supplier Excel</field>
+        <field name="model">aliftech.supplier</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">aliftech.report_supplier_xlsx</field>
+        <field name="report_file">aliftech.report_supplier_xlsx</field>
+        <field name="binding_model_id" ref="model_aliftech_supplier"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_penjualan_pdf" model="ir.actions.report">
+        <field name="name">Print Faktur</field>
+        <field name="model">aliftech.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">aliftech.report_penjualan_pdf</field>
+        <field name="report_file">aliftech.report_penjualan_pdf</field>
+        <field name="binding_model_id" ref="model_aliftech_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="wizard_penjualanreport_pdf" model="ir.actions.report">
+        <field name="name">Print Report</field>
+        <field name="model">aliftech.penjualanreport</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">aliftech.wizard_penjualanreport_pdf_tmp</field>
+        <field name="report_file">aliftech.wizard_penjualanreport_pdf_tmp</field>
+        <field name="binding_model_id" ref="model_aliftech_penjualanreport"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
