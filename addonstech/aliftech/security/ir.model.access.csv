@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aliftech_kelompokproduk,access.aliftech.kelompokproduk,model_aliftech_kelompokproduk,,1,1,1,1
+access_aliftech_produk,access.aliftech.produk,model_aliftech_produk,,1,1,1,1
+access_aliftech_person,access.aliftech.person,model_aliftech_person,,1,1,1,1
+access_aliftech_kasir,access.aliftech.kasir,model_aliftech_kasir,,1,1,1,1
+access_aliftech_cleaningservice,access.aliftech.cleaningservice,model_aliftech_cleaningservice,,1,1,1,1
+access_aliftech_supplier,access.aliftech.supplier,model_aliftech_supplier,,1,1,1,1
+access_aliftech_penjualan,access.aliftech.penjualan,model_aliftech_penjualan,,1,1,1,1
+access_aliftech_detailpenjualan,access.aliftech.detailpenjualan,model_aliftech_detailpenjualan,,1,1,1,1
+access_aliftech_produkdatang,access.aliftech.produkdatang,model_aliftech_produkdatang,,1,1,1,1
+access_aliftech_penjualanreport,access.aliftech.penjualanreport,model_aliftech_penjualanreport,,1,1,1,1
