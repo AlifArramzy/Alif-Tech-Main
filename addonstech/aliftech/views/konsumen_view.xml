@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit tree view -->
+    <record id="res_partner_konsumen_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_konsumen"/><field name="is_direksi"/>
+            </xpath> 
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <field name="poin" />
+                <field name="level" />
+            </xpath>
+            <!-- <xpath expr="//field[@name='display_name']" position="before">
+                <field name="id_member"/>
+            </xpath>  -->
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_konsumen_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="poin" attrs="{'invisible': [('is_direksi','=',True)]}"/>
+                <field name="level" attrs="{'invisible': [('is_direksi','=',True)]}"/>
+                <field name="is_konsumen" attrs="{'invisible': [('is_direksi','=',True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="string">NPWP</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='vat']" position="after">
+                <field name="id_member"/>
+            </xpath>     -->
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_konsumen_action" model="ir.actions.act_window">
+        <field name="name">Konsumen</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">
+        {
+            'search_default_konsumen': 1,
+            'default_is_konsumen':True 
+        }
+        </field>
+    </record>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_konsumen_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after" >
+                <filter name="konsumen" string="Konsumen" domain="[('is_konsumen', '=', True)]"  />
+            </field>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="konsumen_view_menu_act" 
+        name="Konsumen" 
+        parent="aliftech_menu_root" 
+        action="res_partner_konsumen_action" 
+        sequence="30"/>
+
+</odoo>
